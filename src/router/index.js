@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/home'
 import Login from '../views/login'
-
+import Homen2 from '../views/home/home.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -13,12 +13,16 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: Home
+    component: Home,
+    children: [{
+      path: '',
+      component: Homen2
+    }]
   }, {
     path: '/login',
     component: Login
   }
-  // {
+// {
   //   // path: '/about',
   //   // name: 'about',
   //   // // route level code-splitting
