@@ -34,8 +34,11 @@ export default {
 </script>
 
 <style lang='less' scoped>
+.el-aside{
+    width:230px;
+}
 .layout-aside {
-     width: 230px;
+
     .el-menu {
         border-right: none;
     };

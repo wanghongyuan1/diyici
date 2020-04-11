@@ -12,9 +12,9 @@
     <el-dropdown @command="clickMenu">
         <span style="color:pink">{{ userInfo.name }}</span>
        <el-dropdown-menu slot="dropdown">
-<el-dropdown-item command="info">个人信息</el-dropdown-item>
-<el-dropdown-item command="git">gie地址</el-dropdown-item>
-<el-dropdown-item command="lgout">退出</el-dropdown-item>
+         <el-dropdown-item command="info">个人信息</el-dropdown-item>
+         <el-dropdown-item command="git">gie地址</el-dropdown-item>
+         <el-dropdown-item command="lgout">退出</el-dropdown-item>
        </el-dropdown-menu>
     </el-dropdown>
 </el-row>
@@ -31,15 +31,15 @@ export default {
     }
   },
   created () {
-    let token = localStorage.getItem('user-token') // 获取用户令牌
+    // let token = localStorage.getItem('user-token') // 获取用户令牌
     this.$axios({
-      url: '/user/profile',
-      headers: {
-        //   headers参数
-        Authorization: `Bearer ${token}`
-      }
+      url: '/user/profile'
+      // headers: {
+      //   //   headers参数
+      //   Authorization: `Bearer ${token}`
+      // }
     }).then(result => {
-      this.userInfo = result.data.data
+      this.userInfo = result.data
     })
   },
   methods: {
